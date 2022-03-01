@@ -2,18 +2,18 @@
 Backend for a match fixture web app
 
 ## Built with
--Nodejs
--Express
--Mongodb
--Mongoose
+* Nodejs
+* Express
+* Mongodb
+* Mongoose
 
 ## Endpoints
--No login endpoint yet.
--Basic CRUD operations for 
-  ->users
-  ->teams
-  ->sports
-  ->venues
+* No login endpoint yet.
+* Basic CRUD operations for 
+  * users
+  * teams
+  * sports
+  * venues
   
 ## User
 ->"/user", to enter user route
