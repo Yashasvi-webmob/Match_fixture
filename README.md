@@ -16,45 +16,41 @@ Backend for a match fixture web app
   ->venues
   
 ## User
-
 ->"/user", to enter user route
-### POST
+#### POST
 ->"/user/add-details", to add details of user
-### GET
+#### GET
 ->"/user/list-details", to get details of all users
 ->"/user/find-by-name", to get user details by name
-### DELETE
+#### DELETE
 ->"/user/delete-by-id", to delete user by object id
 
 ## Team
-
 ->"/team", to enter teams route
-### POST
+#### POST
 ->"/team/add-details", to add details of a team
-### GET
+#### GET
 ->"/team/list-details", to get details of all teams
 ->"/team/find-by-team", to get team details by team 
-### DELETE
+#### DELETE
 ->"/team/delete-by-id", to delete team by object id
 
 ## Sport
-
 ->"/sport", to enter sport route
-### POST
+#### POST
 ->"/sport/add-details", to add details of sport
-### GET
+#### GET
 ->"/sport/list-details", to get details of all users
 ->"/sport/find-by-name", to get sport details by sport name
-### DELETE
+#### DELETE
 ->"/sport/delete-by-id", to delete sport by object id
 
 ## Venue
-
 ->"/venue", to enter venue route
-### POST
+#### POST
 ->"/venue/add-details", to add details of venue
-### GET
+#### GET
 ->"/venue/list-details", to get details of all venues
 ->"/venue/find-by-name", to get venue details by name
-### DELETE
+#### DELETE
 ->"/venue/delete-by-id", to delete venue by object id
