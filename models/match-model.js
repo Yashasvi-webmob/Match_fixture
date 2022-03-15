@@ -6,12 +6,12 @@ var matchSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    Captain1:{
+    requestingCaptain:{
         type: mongoose.Types.ObjectId,
         required: true,
         ref: User
     },
-    Captain2:{
+    requestedCaptain:{
         type: mongoose.Types.ObjectId,
         required: true,
         ref: User
@@ -19,6 +19,16 @@ var matchSchema = mongoose.Schema({
     sport:{
         type: String,
         required: true
+    },
+    date:{
+        type: String,
+        required: true
+    },
+    startTime:{
+        type: String
+    },
+    endTime:{
+        type: String
     },
     accepted:{
         type:Boolean,
@@ -30,4 +40,4 @@ var matchSchema = mongoose.Schema({
     timestamps: true
 });
 
-exports.module = mongoose.model("match",matchSchema); 
+module.exports = mongoose.model("match",matchSchema); 
