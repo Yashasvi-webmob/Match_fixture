@@ -3,9 +3,12 @@ const mongoose = require('mongoose');
 const express = require('express');
 
 var matchModel= require("../models/match-model");
+
 var router = express.Router();
 //to decide 2 matches or teams don't conflict
-
+router.get('/', function(req,res) {
+  res.send("users route entered");
+});
 
 // to create request
 router.post('/create-request' , async(req, res) => {
@@ -13,7 +16,7 @@ router.post('/create-request' , async(req, res) => {
   
     try {
       const saveMatch = await newMatch.save();
-      return res.status(200).json(saveSport);
+      return res.status(200).json(saveMatch);
     } catch (err) {
       return res.status(500).json(err);
     }
@@ -21,7 +24,7 @@ router.post('/create-request' , async(req, res) => {
   });
 // to delete request
 
-router.delete('/del-request',async(req,res)=>{
+router.delete('/del-request/:id',async(req,res)=>{
     const id=  await req.params.id;
     if(mongoose.isValidObjectId(id)){
       await matchModel.findByIdAndRemove(id);
@@ -33,7 +36,7 @@ router.delete('/del-request',async(req,res)=>{
   
   });
 // to list requests
-router.get(async (req,res)=>{
+router.get('/list-details',async (req,res)=>{
   
   try{
    let listAll=  await matchModel.find();
@@ -49,7 +52,7 @@ router.get(async (req,res)=>{
  });
 
  //find req by id
- router.get(async(req,res)=>{
+ router.get('/update/:id',async(req,res)=>{
   let id = req.params;
   if(!mongoose.Types.ObjectId.isValid(id)){
     res.send("No Such ID");
@@ -61,3 +64,4 @@ router.get(async (req,res)=>{
  });
 
 
+module.exports = router;
